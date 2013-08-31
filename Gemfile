@@ -13,7 +13,7 @@ gem 'devise'
 gem 'pg'
 gem 'rolify'
 gem 'simple_form', '>= 3.0.0.rc'
-gem "friendly_id"
+gem 'friendly_id', '>= 5.0.0.beta4'
 gem 'will_paginate'
 gem 'acts-as-taggable-on'
 gem 'impressionist'

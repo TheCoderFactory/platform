@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    @announcements = Announcement.published
+    @events = Event.published.future(Date.today)
+
   end
 end

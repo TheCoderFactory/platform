@@ -73,7 +73,8 @@ GEM
       nokogiri (~> 1.5)
       ruby-hmac
     formatador (0.2.4)
-    friendly_id (4.0.10)
+    friendly_id (5.0.0.rc1)
+      activerecord (~> 4.0.0)
     hike (1.2.3)
     httpclient (2.3.4.1)
     hub (1.10.6)
@@ -181,7 +182,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   fog
-  friendly_id
+  friendly_id (>= 5.0.0.beta4)
   hub
   impressionist
   jbuilder (~> 1.2)

@@ -1,4 +1,8 @@
 Tcfplatform::Application.routes.draw do
+  resources :announcements
+
+  resources :events
+
   resources :user_profiles
 
   authenticated :user do

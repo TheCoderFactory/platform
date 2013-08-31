@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130831022415) do
+ActiveRecord::Schema.define(version: 20130831041420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 20130831022415) do
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "sections", force: true do |t|
-    t.integer  "day_id"
+    t.integer  "inclass_id"
     t.integer  "priority"
     t.string   "title"
     t.text     "content"
@@ -123,7 +123,14 @@ ActiveRecord::Schema.define(version: 20130831022415) do
     t.datetime "updated_at"
   end
 
-  add_index "sections", ["day_id"], name: "index_sections_on_day_id", using: :btree
+  add_index "sections", ["inclass_id"], name: "index_sections_on_inclass_id", using: :btree
+
+  create_table "tasks", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_profiles", force: true do |t|
     t.integer  "user_id"

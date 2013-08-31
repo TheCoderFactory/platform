@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
+  before_filter :menu_items
+
+  def menu_items
+  		@weeks = Week.active
+  end
 end

@@ -1,11 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700);
 body { 
-	padding-top: 60px;
+	padding-top: 70px;
 	background-color: transparent;
 	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	color: #3498db;
-	font-size: 16pt;
+	font-size: 14pt;
 	line-height: 1.5em;
 	 }
 .admin {
@@ -408,4 +408,19 @@ label {
 .label-warning {
   background-color: #f1c40f;
 }
-
+.nav-pills > li > a {
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.panel-body {
+  padding: 5px;
+}
+.sub-nav > li > a {
+  position: relative;
+  display: block;
+  padding: 2px 15px;
+  font-size: 14px;
+}
+.sub-nav {
+  background-color: #eee;
+}

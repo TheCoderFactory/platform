@@ -1,5 +1,6 @@
 class InclassesController < ApplicationController
   before_action :set_inclass, only: [:show, :edit, :update, :destroy]
+  before_action :set_week
 
   # GET /inclasses
   # GET /inclasses.json
@@ -65,6 +66,10 @@ class InclassesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_inclass
       @inclass = Inclass.find(params[:id])
+    end
+
+    def set_week
+      @week = Week.find(params[:week_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

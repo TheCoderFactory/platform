@@ -1,4 +1,12 @@
 Tcfplatform::Application.routes.draw do
+  resources :sections
+
+  resources :tasks
+
+  get "calendar/index", :id => "calendar"
+  match "calendar", to: "calendar#index", via: :all
+
+
   resources :projects
 
   resources :quizzes
@@ -7,11 +15,9 @@ Tcfplatform::Application.routes.draw do
 
   resources :links
 
-  resources :sections
-
-  resources :inclasses
-
-  resources :weeks
+  resources :weeks do
+    resources :inclasses
+  end
 
   resources :announcements
 

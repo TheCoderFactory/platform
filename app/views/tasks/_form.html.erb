@@ -1,11 +1,9 @@
-<%= simple_form_for(@section) do |f| %>
+<%= simple_form_for(@task) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :inclass %>
-    <%= f.input :priority %>
     <%= f.input :title %>
-    <%= f.input :content %>
+    <%= f.input :description %>
   </div>
 
   <div class="form-actions">

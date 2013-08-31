@@ -2,10 +2,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :number %>
-    <%= f.input :title %>
-    <%= f.input :intro %>
-    <%= f.input :active %>
+    <%= f.input :number, :input_html => { :class => 'form-control' } %>
+    <%= f.input :title, :input_html => { :class => 'form-control' } %>
+    <%= f.input :intro, :input_html => { :class => 'form-control' } %>
+    <%= f.input :active, :input_html => { :class => 'form-control' } %>
   </div>
 
   <div class="form-actions">

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @reading.week %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @reading.title %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @reading.intro %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @reading.url %>
+</p>
+
+<%= link_to 'Edit', edit_reading_path(@reading) %> |
+<%= link_to 'Back', readings_path %>

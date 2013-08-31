@@ -1,0 +1,14 @@
+<%= simple_form_for(@inclass) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :week %>
+    <%= f.input :day %>
+    <%= f.input :title %>
+    <%= f.input :intro %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

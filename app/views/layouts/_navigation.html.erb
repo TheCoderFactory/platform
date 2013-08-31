@@ -14,7 +14,7 @@
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
     <li>
@@ -27,7 +27,7 @@
   <% end %>
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
+    <%= link_to 'My account', edit_user_registration_path %>
     </li>
     <% if current_user.has_role? :admin %>
       <li>

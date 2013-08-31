@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  week_id: 
+  title: MyString
+  intro: MyText
+
+two:
+  week_id: 
+  title: MyString
+  intro: MyText

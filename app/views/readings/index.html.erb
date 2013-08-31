@@ -1,0 +1,33 @@
+<h1>Listing readings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Title</th>
+      <th>Intro</th>
+      <th>Url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @readings.each do |reading| %>
+      <tr>
+        <td><%= reading.week %></td>
+        <td><%= reading.title %></td>
+        <td><%= reading.intro %></td>
+        <td><%= reading.url %></td>
+        <td><%= link_to 'Show', reading %></td>
+        <td><%= link_to 'Edit', edit_reading_path(reading) %></td>
+        <td><%= link_to 'Destroy', reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reading', new_reading_path %>

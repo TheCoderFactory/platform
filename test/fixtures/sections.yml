@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  day_id: 
+  priority: 1
+  title: MyString
+  content: MyText
+
+two:
+  day_id: 
+  priority: 1
+  title: MyString
+  content: MyText

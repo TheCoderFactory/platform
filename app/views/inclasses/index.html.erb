@@ -1,0 +1,33 @@
+<h1>Listing inclasses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Day</th>
+      <th>Title</th>
+      <th>Intro</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inclasses.each do |inclass| %>
+      <tr>
+        <td><%= inclass.week %></td>
+        <td><%= inclass.day %></td>
+        <td><%= inclass.title %></td>
+        <td><%= inclass.intro %></td>
+        <td><%= link_to 'Show', inclass %></td>
+        <td><%= link_to 'Edit', edit_inclass_path(inclass) %></td>
+        <td><%= link_to 'Destroy', inclass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inclass', new_inclass_path %>

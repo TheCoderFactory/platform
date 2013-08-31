@@ -1,4 +1,18 @@
 Tcfplatform::Application.routes.draw do
+  resources :projects
+
+  resources :quizzes
+
+  resources :readings
+
+  resources :links
+
+  resources :sections
+
+  resources :inclasses
+
+  resources :weeks
+
   resources :announcements
 
   resources :events

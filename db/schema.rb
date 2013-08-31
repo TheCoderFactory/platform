@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130830133932) do
+ActiveRecord::Schema.define(version: 20130831022415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,58 @@ ActiveRecord::Schema.define(version: 20130830133932) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "inclasses", force: true do |t|
+    t.integer  "week_id"
+    t.integer  "day"
+    t.string   "title"
+    t.text     "intro"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inclasses", ["week_id"], name: "index_inclasses_on_week_id", using: :btree
+
+  create_table "links", force: true do |t|
+    t.integer  "week_id"
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["week_id"], name: "index_links_on_week_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.integer  "week_id"
+    t.string   "title"
+    t.text     "intro"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["week_id"], name: "index_projects_on_week_id", using: :btree
+
+  create_table "quizzes", force: true do |t|
+    t.integer  "week_id"
+    t.string   "title"
+    t.text     "intro"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quizzes", ["week_id"], name: "index_quizzes_on_week_id", using: :btree
+
+  create_table "readings", force: true do |t|
+    t.integer  "week_id"
+    t.string   "title"
+    t.text     "intro"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "readings", ["week_id"], name: "index_readings_on_week_id", using: :btree
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -61,6 +113,17 @@ ActiveRecord::Schema.define(version: 20130830133932) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "sections", force: true do |t|
+    t.integer  "day_id"
+    t.integer  "priority"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sections", ["day_id"], name: "index_sections_on_day_id", using: :btree
 
   create_table "user_profiles", force: true do |t|
     t.integer  "user_id"
@@ -106,5 +169,14 @@ ActiveRecord::Schema.define(version: 20130830133932) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  create_table "weeks", force: true do |t|
+    t.integer  "number"
+    t.string   "title"
+    t.text     "intro"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

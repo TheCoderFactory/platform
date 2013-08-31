@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @inclass.week %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @inclass.day %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @inclass.title %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @inclass.intro %>
+</p>
+
+<%= link_to 'Edit', edit_inclass_path(@inclass) %> |
+<%= link_to 'Back', inclasses_path %>

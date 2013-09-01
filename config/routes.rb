@@ -6,18 +6,13 @@ Tcfplatform::Application.routes.draw do
   get "calendar/index", :id => "calendar"
   match "calendar", to: "calendar#index", via: :all
 
-
   resources :projects
 
+  resources :weeks
+  resources :inclasses
   resources :quizzes
-
   resources :readings
-
   resources :links
-
-  resources :weeks do
-    resources :inclasses
-  end
 
   resources :announcements
 

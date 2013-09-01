@@ -12,7 +12,10 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<h2>Announcements</h2>
+			<h2><span class="icon-stack">
+  <i class="icon-check-empty icon-stack-base"></i>
+  <i class="icon-bullhorn"></i>
+</span>Announcements</h2>
 			<div class="box-body">
 				<% if @announcements.count > 0 %>
 					<% @announcements.each do |announcement| %>
@@ -24,7 +27,10 @@
 		</div>
 
 		<div class="col-md-4">
-			<h2>Events</h2>
+			<h2><span class="icon-stack">
+  <i class="icon-check-empty icon-stack-base"></i>
+  <i class="icon-calendar"></i>
+</span>Events</h2>
 			<div class="box-body">
 				<% if @events.count > 0 %>
 					<% @events.each do |event| %>

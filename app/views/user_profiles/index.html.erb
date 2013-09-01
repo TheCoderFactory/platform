@@ -1,49 +1,37 @@
-<h1>Listing user_profiles</h1>
-
-<table>
+<h2>Student profiles</h2>
+<div class="box-body">
+<table class="table">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Picture</th>
-      <th>Background</th>
-      <th>Hobbies</th>
-      <th>Facebook</th>
-      <th>Linkedin</th>
-      <th>Twitter</th>
-      <th>Website</th>
-      <th>Nickname</th>
-      <th>Slug</th>
-      <th>Github</th>
+      <th></th>
+      <th>Name</th>
+      <th>Email</th>
       <th>Phone</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Github</th>
+      <% if current_user.has_role? :admin %>
+        <th></th>
+        <th></th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% @user_profiles.each do |user_profile| %>
       <tr>
-        <td><%= user_profile.user %></td>
-        <td><%= user_profile.picture %></td>
-        <td><%= user_profile.background %></td>
-        <td><%= user_profile.hobbies %></td>
-        <td><%= user_profile.facebook %></td>
-        <td><%= user_profile.linkedin %></td>
-        <td><%= user_profile.twitter %></td>
-        <td><%= user_profile.website %></td>
-        <td><%= user_profile.nickname %></td>
-        <td><%= user_profile.slug %></td>
-        <td><%= user_profile.github %></td>
+        <td><%= link_to user_profile do %><%= image_tag user_profile.picture, class: "profile-list" %><% end %></td>
+        <td><%= link_to user_profile.user.name, user_profile %></td>
+        <td><%= user_profile.user.email %></td>
         <td><%= user_profile.phone %></td>
-        <td><%= link_to 'Show', user_profile %></td>
-        <td><%= link_to 'Edit', edit_user_profile_path(user_profile) %></td>
-        <td><%= link_to 'Destroy', user_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% if !user_profile.github.nil? %><center><%= link_to user_profile.github do %><i class="icon-github-alt"></i><% end %></center><% end %></td>
+        <% if current_user.has_role? :admin %>
+          <td><%= link_to 'Edit', edit_user_profile_path(user_profile) %></td>
+          <td><%= link_to 'Destroy', user_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New User profile', new_user_profile_path %>

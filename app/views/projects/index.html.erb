@@ -1,31 +1,24 @@
-<h1>Listing projects</h1>
-
-<table>
+<h2>Projects</h2>
+<div class="box-body">
+<table class="table">
   <thead>
     <tr>
       <th>Week</th>
       <th>Title</th>
-      <th>Intro</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.week %></td>
-        <td><%= project.title %></td>
-        <td><%= project.intro %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td width="100px">Week <%= project.week.number %></td>
+        <td><%= link_to project.title, project %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
-
+<% if current_user.has_role? :admin %>
 <%= link_to 'New Project', new_project_path %>
+<% end %>

@@ -1,6 +1,11 @@
-<h1>Editing user_profile</h1>
+<div class="row">
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @user_profile %> |
-<%= link_to 'Back', user_profiles_path %>
+  	<div class="col-md-12"><h2>My profile <small><%= link_to 'Change password', edit_user_registration_path(current_user) %></small></h2>
+    	<div class="box-body">
+			<%= render 'form' %>
+		
+			</div>
+		</div>
+	</div>
+	
+</div>

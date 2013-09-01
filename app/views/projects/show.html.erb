@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Week:</strong>
-  <%= @project.week %>
-</p>
-
-<p>
-  <strong>Title:</strong>
+<div class="page-title">
+<h2>Week 
+  <%= @project.week.number %> Project
+</h2>
+</div>
+<div class="box-body">
+<h3>
   <%= @project.title %>
+</h3>
+
+
+  <strong>Description:</strong>
+  <p><%= @project.intro %>
 </p>
 
-<p>
-  <strong>Intro:</strong>
-  <%= @project.intro %>
-</p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+
+</div>
+<% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_project_path(@project) %>
+<% end %>

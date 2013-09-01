@@ -1,64 +1,65 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @user_profile.user %>
-</p>
+<h2><%= @user_profile.user.name %></h2>
+  
+<div class="box-body">
+  <div class="row">
+    <div class="col-md-4">
 
-<p>
-  <strong>Picture:</strong>
-  <%= @user_profile.picture %>
-</p>
 
-<p>
-  <strong>Background:</strong>
-  <%= @user_profile.background %>
-</p>
-
-<p>
-  <strong>Hobbies:</strong>
-  <%= @user_profile.hobbies %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @user_profile.facebook %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @user_profile.linkedin %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @user_profile.twitter %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @user_profile.website %>
-</p>
-
-<p>
-  <strong>Nickname:</strong>
-  <%= @user_profile.nickname %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @user_profile.slug %>
-</p>
-
-<p>
-  <strong>Github:</strong>
-  <%= @user_profile.github %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
+  <%= image_tag @user_profile.picture, class: 'profile-show' %>
+  <p>
+  
   <%= @user_profile.phone %>
 </p>
+<p>
+  
+  <%= @user_profile.user.email %>
+</p>
+</div>
+<div class="col-md-8">
 
-<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
-<%= link_to 'Back', user_profiles_path %>
+<strong>Background:</strong>
+<p>
+  
+  <%= @user_profile.background.html_safe %>
+</p>
+
+
+  <strong>Hobbies:</strong>
+  <p><%= @user_profile.hobbies.html_safe %>
+</p>
+
+<% if !@user_profile.facebook.blank? %>
+<p>
+  <%= link_to @user_profile.facebook do %><i class="icon-facebook-sign"></i> Facebook<% end %>
+</p>
+<% end %>
+<% if !@user_profile.linkedin.blank? %>
+<p>
+  <%= link_to @user_profile.linkedin do %><i class="icon-linkedin-sign"></i> LinkedIn<% end %>
+</p>
+<% end %>
+<% if !@user_profile.twitter.blank? %>
+
+<p>
+  <a href="http://twitter.com/<%= @user_profile.twitter %>" target="_blank"><i class="icon-twitter-sign"></i> Twitter</a>
+</p>
+<% end %>
+<% if !@user_profile.website.blank? %>
+
+<p>
+  <%= link_to @user_profile.website do %><i class="icon-globe"></i> Website<% end %>
+</p>
+<% end %>
+<% if !@user_profile.github.blank? %>
+
+
+<p>
+  <%= link_to @user_profile.github do %><i class="icon-github-sign"></i> Github<% end %>
+</p>
+<% end %>
+
+</div></div></div>
+<% if current_user == @user_profile.user %>
+<%= link_to 'Edit', edit_user_profile_path(@user_profile) %>
+<% end %>

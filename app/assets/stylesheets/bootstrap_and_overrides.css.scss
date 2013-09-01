@@ -11,16 +11,21 @@ body {
 .admin {
   color: #333;
 }
+.navbar-brand {
+  float: left;
+  padding: 10px 15px;
+  font-size: 36px;
+  line-height: 21px;
+  font-weight: 100;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  text-decoration: none;
+}
 p {
   font-family: 'Roboto';
   color: #2c3e50;
-}
-html { 
-  background: url(robot6.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 h1 {
   font-weight: 100;
@@ -105,7 +110,7 @@ label {
 .box-body {
 	background-color: white;
 	padding: 30px;
-  border: 8px solid #3498db;
+  border: 8px solid #18BC9C;
   border-radius : 16px;
   margin-bottom: 10px;
 }
@@ -423,4 +428,10 @@ label {
 }
 .sub-nav {
   background-color: #eee;
+}
+.profile-list {
+	width: 100px;
+}
+.profile-show {
+	width: 200px;
 }

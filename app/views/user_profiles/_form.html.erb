@@ -1,14 +1,15 @@
 <div class="row">
-  <div class="col-md-4">
-
 <%= simple_form_for @user_profile, :html => { multipart: true } do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="col-md-4">
     <%= f.association :user, as: :string, as: :hidden  %>
+    <% if !@user_profile.picture.blank? %>Current picture:<br><%= image_tag @user_profile.picture, class: 'profile-show' %><% end %><br>
     <%= f.input :picture, :as => :file, required: true %>
     <%= f.input :nickname, required: true, :input_html => { :class => 'form-control' }, placeholder: 'Feel free to use your real name - or something fun' %>
     <%= f.input :phone, :input_html => { :class => 'form-control' }, placeholder: 'To help your classmates get in touch' %>
+  </div>
+  <div class="col-md-7 col-md-offset-1">
     <%= f.input :background, :input_html => { :class => 'form-control' } %>
     <%= f.input :hobbies, :input_html => { :class => 'form-control' } %>
     <%= f.input :github, :input_html => { :class => 'form-control' }, placeholder: 'http://github.com/username' %>
@@ -16,10 +17,10 @@
     <%= f.input :linkedin, :input_html => { :class => 'form-control' }, placeholder: 'http://linkedin.com/username' %>
     <%= f.input :twitter, :input_html => { :class => 'form-control' }, placeholder: '@coderfactory' %>
     <%= f.input :website, :input_html => { :class => 'form-control' }, placeholder: 'http://example.com' %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  
+
+
+      <%= f.submit 'Update my details', class: 'btn btn-default' %>
   </div>
-<% end %>
-</div></div>
+      <% end %>

@@ -1,24 +1,56 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Number:</strong>
-  <%= @week.number %>
+
+<h2><%= @week.title %>
+  <small>Week <%= @week.number %></small></h2>
+<div class="box-body">
+
+  <strong>Intro</strong>
+  <p><%= @week.intro %>
 </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @week.title %>
-</p>
+<table class="table">
+	<% if @week.inclasses.count > 0 %>
+		<tr>
+			<th width="150px"><i class="icon-group"></i> Class</th>
+			<td><%= link_to @week.inclasses.first.title, @week.inclasses.first %></td>
+		</tr>
+	<% end %>
 
-<p>
-  <strong>Intro:</strong>
-  <%= @week.intro %>
-</p>
+	<% if @week.readings.count > 0 %>
+		<tr>
+			<th><i class="icon-book"></i> Readings</th>
+			<td>
+				<% @week.readings.each do |reading| %>
+					<div class="link-body">
+						<%= link_to reading.title, reading.url %> 
+						<i class="icon-angle-right"></i> 
+						<%= reading.intro %>
+					</div>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
 
-<p>
-  <strong>Active:</strong>
-  <%= @week.active %>
-</p>
+	<% if @week.links.count > 0 %>
+		<tr>
+			<th><i class="icon-link"></i> Resources</th>
+			<td>
+				<% @week.links.each do |link| %>
+					<p><%= link_to link.title, link.url %></p>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
 
-<%= link_to 'Edit', edit_week_path(@week) %> |
-<%= link_to 'Back', weeks_path %>
+	<% if @week.projects.count > 0 %>
+		<tr>
+			<th><i class="icon-github"></i> Project</th>
+			<td><%= link_to @week.projects.first.title, @week.projects.first %></td>
+		</tr>
+	<% end %>
+</table>
+
+</div>
+<% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_week_path(@week) %> 
+<% end %>

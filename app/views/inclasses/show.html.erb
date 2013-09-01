@@ -1,24 +1,22 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Week:</strong>
-  <%= @inclass.week %>
-</p>
-
-<p>
-  <strong>Day:</strong>
-  <%= @inclass.day %>
-</p>
-
-<p>
-  <strong>Title:</strong>
+<div class="page-title">
+<h2>Week 
+  <%= @inclass.week.number %> Class
+</h2>
+</div>
+<div class="box-body">
+<h3>
   <%= @inclass.title %>
+</h3>
+
+
+  <strong>Description:</strong>
+  <p><%= @inclass.intro %>
 </p>
 
-<p>
-  <strong>Intro:</strong>
-  <%= @inclass.intro %>
-</p>
 
-<%= link_to 'Edit', edit_week_inclass_path(@inclass.week, @inclass) %> |
-<%= link_to 'Back', week_inclasses_path %>
+
+</div>
+<% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_inclass_path(@inclass) %>
+<% end %>

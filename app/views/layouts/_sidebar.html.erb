@@ -10,12 +10,10 @@
         <% @weeks.each do |week| %>
           <li class="<%= 'active' if current_page?(week_path(week)) %>">
             <%= link_to "Week " + week.number.to_s, week_path(week) %>
-            <% if current_page?(:controller => 'weeks') %>
               <ul class="nav sub-nav">
                 <li><%= link_to "Class", inclass_path(week.inclasses.first) %></li>
                 <li><%= link_to "Resources", links_path %></li>
               </ul>
-            <% end %>
           </li>
 
         <% end %>

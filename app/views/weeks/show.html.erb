@@ -22,7 +22,7 @@
 			<td>
 				<% @week.readings.each do |reading| %>
 					<div class="link-body">
-						<%= link_to reading.title, reading.url %> 
+						<%= link_to reading.title, reading.url, target: "_blank" %> 
 						<i class="icon-angle-right"></i> 
 						<%= reading.intro %>
 					</div>
@@ -36,7 +36,18 @@
 			<th><i class="icon-link"></i> Resources</th>
 			<td>
 				<% @week.links.each do |link| %>
-					<p><%= link_to link.title, link.url %></p>
+					<p><%= link_to link.title, link.url, target: "_blank" %></p>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+
+	<% if @week.quizzes.count > 0 %>
+		<tr>
+			<th><i class="icon-link"></i> Quizzes</th>
+			<td>
+				<% @week.quizzes.each do |quiz| %>
+					<p><%= link_to quiz.title, quiz.intro, target: "_blank" %></p>
 				<% end %>
 			</td>
 		</tr>

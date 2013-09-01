@@ -1,4 +1,5 @@
 Tcfplatform::Application.routes.draw do
+  get "admin/index"
   resources :sections
 
   resources :tasks

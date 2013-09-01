@@ -6,4 +6,12 @@ class Week < ActiveRecord::Base
 	has_many :readings
 	default_scope order: 'weeks.number ASC'
 	scope :active, -> { where(active: true) } 
+
+	def current_week?
+		self.start_date <= Date.today && self.end_date > Date.today
+	end
+
+	def finished?
+		self.end_date < Date.today
+	end
 end

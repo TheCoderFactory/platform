@@ -1,5 +1,6 @@
 Tcfplatform::Application.routes.draw do
-  get "admin/index"
+  get "admin/index", :id => "admin"
+  match "admin", to: "admin#index", via: :all
   resources :sections
 
   resources :tasks

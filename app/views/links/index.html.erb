@@ -6,22 +6,21 @@
     <tr>
       <th>Week</th>
       <th>Title</th>
-      <th>Url</th>
+      <% if current_user.has_role? :admin %>
       <th></th>
-      <th></th>
-      <th></th>
+      <th></th><% end %>
     </tr>
   </thead>
 
   <tbody>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link.week %></td>
-        <td><%= link.title %></td>
-        <td><%= link.url %></td>
-        <td><%= link_to 'Show', link %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link.week.number %></td>
+        <td><%= link_to link.title, link.url %></td>
+        <% if current_user.has_role? :admin %>
+          <td><%= link_to 'Edit', edit_link_path(link) %></td>
+          <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

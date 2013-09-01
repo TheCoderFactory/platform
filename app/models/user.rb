@@ -8,10 +8,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  before_create :set_default_role
+  after_create :add_role_to_user
 
   private
-  def set_default_role
-    self.role ||= Role.find_by_name('student')
+
+  def add_role_to_user
+    self.add_role :student
   end
 end

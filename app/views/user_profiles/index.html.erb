@@ -33,5 +33,6 @@
 </table>
 </div>
 <br>
-
-<%= link_to 'New User profile', new_user_profile_path %>
+<% if current_user.user_profile.nil? %>
+<%= link_to 'Create your profile now', new_user_profile_path, class: 'btn btn-success' %>
+<% end %>

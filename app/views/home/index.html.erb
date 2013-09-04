@@ -16,14 +16,16 @@
   <i class="icon-check-empty icon-stack-base"></i>
   <i class="icon-bullhorn"></i>
 </span>Announcements</h2>
-			<div class="box-body">
+			
 				<% if @announcements.count > 0 %>
 					<% @announcements.each do |announcement| %>
+					<div class="box-body">
 						<h3><%= announcement.title %></h3>
 						<p><%= announcement.body.html_safe %></p>
+					</div>
 					<% end %>
 				<% end %>
-			</div>
+			
 		</div>
 
 		<div class="col-md-4">

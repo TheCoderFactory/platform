@@ -1,4 +1,29 @@
 <h2>Calendar</h2>
 <div class="box-body">
-<p>Events will go here.</p>
+	<% if @future_events.count > 0 %>
+					<% @future_events.each do |event| %>
+						<div class="row">
+							<div class="col-lg-12">
+								<hr>
+								<h3><i class="icon-<%= event.icon %>"></i> <%= event.title %></h3>
+								<hr>
+							</div>
+							<div class="col-lg-4">
+								<p><strong><%= event.date.strftime("%A, %e %b %Y") %></strong></p>
+								<p><%= event.date.strftime("%I:%M%p") %> - <%= event.date.strftime("%I:%M%p") %></p>
+							</div>
+							<div class="col-lg-8">
+								<h4>Details</h4>
+								<p><%= event.description.html_safe %></p>
+								<% if current_user.has_role? :admin %>
+									<%= link_to "Edit", edit_event_path(event), class: 'btn btn-warning' %>
+								<% end %>
+							</div>
+
+						</div>
+						<br>
+					<% end %>
+				<% else %>
+					<p>No upcoming events</p>
+				<% end %>
 </div>

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   after_create :add_role_to_user
 
+
   private
 
   def add_role_to_user

@@ -22,7 +22,7 @@
         <td><%= link_to user_profile.user.name, user_profile %></td>
         <td><%= user_profile.user.email %></td>
         <td><%= user_profile.phone %></td>
-        <td><% if !user_profile.github.nil? %><center><%= link_to user_profile.github do %><i class="icon-github-alt"></i><% end %></center><% end %></td>
+        <td><% if !user_profile.github.blank? %><center><%= link_to user_profile.github do %><i class="icon-github-alt"></i><% end %></center><% end %></td>
         <% if current_user.has_role? :admin %>
           <td><%= link_to 'Edit', edit_user_profile_path(user_profile) %></td>
           <td><%= link_to 'Destroy', user_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

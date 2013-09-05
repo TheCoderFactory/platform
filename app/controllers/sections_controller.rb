@@ -28,7 +28,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        format.html { redirect_to @section, notice: 'Section was successfully created.' }
+        format.html { redirect_to inclass_path(@section.inclass), notice: 'Section was successfully created.' }
         format.json { render action: 'show', status: :created, location: @section }
       else
         format.html { render action: 'new' }

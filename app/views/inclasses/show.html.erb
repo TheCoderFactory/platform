@@ -29,7 +29,7 @@
 
 <% @inclass.sections.each do |section| %>
 	<div class="box-body">
-		<h3 id="<%= '#' + section.priority.to_s %>"><%= section.title %></h3>
+		<h3 id="<%= section.priority.to_s %>"><%= section.title %></h3>
 		<%= section.content.html_safe %>
 		<% if current_user.has_role? :admin %>
 			<%= link_to 'Edit section', edit_section_path(section) %>

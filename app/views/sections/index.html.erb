@@ -1,12 +1,11 @@
 <h1>Listing sections</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Inclass</th>
       <th>Priority</th>
       <th>Title</th>
-      <th>Content</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,10 +15,9 @@
   <tbody>
     <% @sections.each do |section| %>
       <tr>
-        <td><%= section.inclass %></td>
+        <td><%= section.inclass.title %></td>
         <td><%= section.priority %></td>
         <td><%= section.title %></td>
-        <td><%= section.content %></td>
         <td><%= link_to 'Show', section %></td>
         <td><%= link_to 'Edit', edit_section_path(section) %></td>
         <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>

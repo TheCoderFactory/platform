@@ -15,7 +15,7 @@
   <tbody>
     <% @inclasses.each do |inclass| %>
       <tr>
-        <td><%= inclass.week %></td>
+        <td><%= inclass.week.title %></td>
         <td><%= inclass.day %></td>
         <td><%= inclass.title %></td>
         <td><%= link_to 'Show', inclass %></td>

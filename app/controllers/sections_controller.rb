@@ -10,6 +10,8 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
+    @next_section = Section.find_by priority: @section.priority + 1
+    @previous_section = Section.find_by priority: @section.priority - 1
   end
 
   # GET /sections/new
@@ -64,7 +66,7 @@ class SectionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_section
-      @section = Section.find(params[:id])
+      @section = Section.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

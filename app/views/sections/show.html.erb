@@ -1,21 +1,34 @@
-<p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li><%= link_to week_path(@section.inclass.week) do %>Week <%= @section.inclass.week.number %>: <%= @section.inclass.week.title %><% end %></li>
+  <li><%= link_to inclass_path(@section.inclass) do %><%= @section.inclass.title %><% end %></li>
+  <li class="active">Section <%= @section.priority %>: <%= @section.title %></li>
+</ol>
 
-<p>
-  <strong>Inclass:</strong>
-  <%= @section.inclass.title %>
-</p>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @section.priority %>
-</p>
-
-<%= link_to 'Index', sections_path, class: 'btn btn-info' %> <%= link_to "Add section", new_section_path, class: 'btn btn-success' %>
-<br><br>
+<h2 class="title"><%= @section.priority %>. <%= @section.title %></h2>
 <div class="box-body">
-		<h3><%= @section.title %></h3>
+		
 		<%= @section.content.html_safe %>
+		<br>
+		<div class="direction-buttons">
+		
+			<% if @previous_section %>
+				<%= link_to section_path(@previous_section), class: 'btn btn-warning pull-left' do %><i class="icon-chevron-sign-left"></i> <%= @previous_section.priority %>. <%= @previous_section.title %><% end %>
+			<% end %>
+			<% if @next_section %>
+				<%= link_to section_path(@next_section), class: 'btn btn-warning pull-right' do %><%= @next_section.priority %>. <%= @next_section.title %> <i class="icon-chevron-sign-right"></i><% end %>
+			<% end %>
+		</div>
+
+		<br>
+
 		<% if current_user.has_role? :admin %>
+		<br><br>
 			<%= link_to 'Edit section', edit_section_path(@section) %>
 		<% end %>
 	</div>
+
+<% if current_user.has_role? :admin %>
+	<%= link_to 'Index', sections_path, class: 'btn btn-info' %> 
+	<%= link_to "Add section", new_section_path, class: 'btn btn-success' %>
+<% end %>

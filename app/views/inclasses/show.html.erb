@@ -1,23 +1,21 @@
 <p id="notice"><%= notice %></p>
 <div class="page-title">
-<h2>Week 
-  <%= @inclass.week.number %> Class
+<h2><%= @inclass.title %> <small>Week 
+  <%= @inclass.week.number %> </small>
 </h2>
 </div>
 <div class="box-body">
-<h3>
-  <%= @inclass.title %>
-</h3>
 
 
-  <strong>Description:</strong>
+
+  <h3>Description:</h3>
   <p><%= @inclass.intro.html_safe %>
 </p>
 
 <h3>Sections</h3>
 <ol>
 	<% @inclass.sections.each do |section| %>
-		<li><%= link_to section.title, "#" + section.priority.to_s %></li>
+		<li><%= link_to section.title, section %></li>
 	<% end %>
 </ol>
 

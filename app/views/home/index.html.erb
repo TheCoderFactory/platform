@@ -20,8 +20,8 @@
 				<% if @announcements.count > 0 %>
 					<% @announcements.each do |announcement| %>
 					<div class="box-body">
-						<h3><%= announcement.title %></h3>
-						<p><%= announcement.body.html_safe %></p>
+						<h2><%= announcement.title %></h2>
+						<%= announcement.body.html_safe %>
 					</div>
 					<% end %>
 				<% end %>

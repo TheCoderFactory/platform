@@ -11,12 +11,29 @@
 
 
   <strong>Description:</strong>
-  <p><%= @inclass.intro %>
+  <p><%= @inclass.intro.html_safe %>
 </p>
 
+<h3>Sections</h3>
+<ol>
+	<% @inclass.sections.each do |section| %>
+		<li><%= link_to section.title, "#" + section.title %></li>
+	<% end %>
+</ol>
 
 
 </div>
 <% if current_user.has_role? :admin %>
 <%= link_to 'Edit', edit_inclass_path(@inclass) %>
 <% end %>
+
+<% @inclass.sections.each do |section| %>
+	<div class="box-body" id="# + <%= section.title %>">
+		<h3><%= section.title %></h3>
+		<%= section.content.html_safe %>
+		<% if current_user.has_role? :admin %>
+			<%= link_to 'Edit section', edit_section_path(section) %>
+		<% end %>
+	</div>
+<% end %>
+

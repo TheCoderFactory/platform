@@ -4,8 +4,8 @@
   <div class="form-inputs">
     <%= f.association :inclass %>
     <%= f.input :priority %>
-    <%= f.input :title %>
-    <%= f.input :content %>
+    <%= f.input :title, input_html: { class: 'form-control' } %>
+    <%= f.input :content, input_html: { class: 'form-control tinymce' } %>
   </div>
 
   <div class="form-actions">

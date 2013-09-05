@@ -6,6 +6,9 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The Coder Factory - Cerebro" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <% if action_name == 'new' || action_name == 'edit' %>
+      <%= tinymce_assets %>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
@@ -28,6 +31,8 @@
         </footer>
 
       </div> <!--! end of .container -->
-    
+    <% if action_name == 'new' || action_name == 'edit' %>
+      <%= tinymce %>
+    <% end %>
   </body>
 </html>

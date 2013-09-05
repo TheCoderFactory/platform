@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.association :week %>
     <%= f.input :title %>
-    <%= f.input :intro, input_html: { class: 'form-control tinymce', rows: 10 } %>
+    <%= f.input :intro, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
     <%= f.input :url %>
   </div>
 

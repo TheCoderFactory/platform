@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :title, :input_html => { :class => 'form-control' }, :input_html => { :class => 'form-control' } %>
-    <%= f.input :body, input_html: { class: 'form-control tinymce', rows: 10 } %>
+    <%= f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
     <%= f.input :icon, :input_html => { :class => 'form-control' } %>
     <%= f.input :link, :input_html => { :class => 'form-control' } %>
     <%= f.input :publish %>

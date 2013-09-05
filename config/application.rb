@@ -29,5 +29,6 @@ module Tcfplatform
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += Ckeditor.assets
   end
 end

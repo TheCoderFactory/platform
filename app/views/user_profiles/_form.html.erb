@@ -10,8 +10,8 @@
     <%= f.input :phone, :input_html => { :class => 'form-control' }, placeholder: 'To help your classmates get in touch' %>
   </div>
   <div class="col-md-7 col-md-offset-1">
-    <%= f.input :background, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
-    <%= f.input :hobbies, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+    <%= f.input :background, :input_html => { :class => 'form-control', rows: 10 } %>
+    <%= f.input :hobbies, :input_html => { :class => 'form-control', rows: 10 } %>
     <%= f.input :github, :input_html => { :class => 'form-control' }, placeholder: 'http://github.com/username' %>
     <%= f.input :facebook, :input_html => { :class => 'form-control' }, placeholder: 'http://facebook.com/username' %>
     <%= f.input :linkedin, :input_html => { :class => 'form-control' }, placeholder: 'http://linkedin.com/username' %>

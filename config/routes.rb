@@ -1,5 +1,4 @@
 Tcfplatform::Application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
   get "admin/index", :id => "admin"
   match "admin", to: "admin#index", via: :all
   resources :sections

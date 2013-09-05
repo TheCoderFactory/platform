@@ -21,7 +21,7 @@ gem 'carrierwave'
 gem "fog"
 gem "font-awesome-rails"
 gem 'newrelic_rpm'
-gem "ckeditor"
+gem "ckeditor", :git => "https://github.com/adamico/ckeditor.git", :branch => "rails-4-compatibility"
 gem "mini_magick"
 group :development do
   gem 'better_errors'

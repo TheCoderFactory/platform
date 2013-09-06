@@ -22,6 +22,15 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-fighter-jet"></i> Quick links <b class="caret"></b></a>
         <ul class="dropdown-menu">
+          <li><a href="https://trello.com/" target="_blank"><i class="icon-trello"></i> Trello</a></li>
+          <% if current_user.user_profile.github.blank? %>
+            <li><a href="https://github.com/" target="_blank"><i class="icon-github"></i> Github</a></li>
+          <% else %>
+            <li><%= link_to current_user.user_profile.github do %><i class="icon-github"></i> Github<% end %></li>
+          <% end %>
+          <li><a href="http://heroku.com/" target="_blank"><i class="icon-cloud-upload"></i> Heroku</a></li>
+
+          <li class="divider"></li>
           <% @links.each do |link| %>
             <li><%= link_to link.title, link.url, target: "_blank" %></li>
           <% end %>

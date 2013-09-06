@@ -30,11 +30,11 @@
 
 
 <div class="panel panel-warning">
-  <div class="panel-heading"><i class="icon-comments-alt"></i> Group chat</div>
+  <div class="panel-heading"><i class="icon-group"></i> Group chat</div>
   <div class="panel-body">
     <ul class="nav nav-pills nav-stacked">
       <% @chatrooms.each do |chatroom| %>
-        <li><%= link_to chatroom.name, chatroom.url, target: "_blank" %></li>
+        <li><%= link_to chatroom.url, target: "_blank" do %><i class="icon-comments-alt"></i> <%= chatroom.name %><% end %></li>
       <% end %>
     </ul>
   </div>

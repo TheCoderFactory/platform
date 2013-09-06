@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li><%= link_to week_path(@inclass.week) do %>Week <%= @inclass.week.number %>: <%= @inclass.week.title %><% end %></li>
+  <li class="active">Day <%= @inclass.day %>: <%= @inclass.title %></li>
+</ol>
+
 <div class="page-title">
 <h2><%= @inclass.title %> <small>Week 
   <%= @inclass.week.number %> </small>

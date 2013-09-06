@@ -11,8 +11,8 @@ class SectionsController < ApplicationController
   # GET /sections/1.json
   def show
     @inclass = @section.inclass
-    @next_section = Section.same_class(@inclass).find_by priority: @section.priority + 1
-    @previous_section = Section.find_by priority: @section.priority - 1
+    @next_section = @inclass.sections.find_by priority: @section.priority + 1
+    @previous_section = @inclass.sections.find_by priority: @section.priority - 1
   end
 
   # GET /sections/new

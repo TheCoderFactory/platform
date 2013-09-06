@@ -4,6 +4,6 @@ class Section < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  # def same_class(inclass)
+
   	
 end

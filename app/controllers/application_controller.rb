@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   def menu_items
   		@weeks = Week.active
       @chatrooms = Chatroom.all
+      @links = Link.quick
   end
 
 

@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   		@weeks = Week.active
   end
 
+
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected

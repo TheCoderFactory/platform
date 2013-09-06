@@ -10,6 +10,8 @@ class InclassesController < ApplicationController
   # GET /inclasses/1
   # GET /inclasses/1.json
   def show
+
+    @week = @inclass.week
   end
 
   # GET /inclasses/new

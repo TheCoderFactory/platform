@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
   <li><%= link_to week_path(@section.inclass.week) do %>Week <%= @section.inclass.week.number %>: <%= @section.inclass.week.title %><% end %></li>
-  <li><%= link_to inclass_path(@section.inclass) do %><%= @section.inclass.title %><% end %></li>
+  <li><%= link_to inclass_path(@section.inclass) do %>Day <%= @inclass.day %>: <%= @section.inclass.title %><% end %></li>
   <li class="active">Section <%= @section.priority %>: <%= @section.title %></li>
 </ol>
 

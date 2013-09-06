@@ -1,12 +1,15 @@
-
+<!-- <ol class="breadcrumb">
+  <li class="active"><%= @week.title %></li>
+  
+</ol> -->
 
 <h2><%= @week.title %>
   <small>Week <%= @week.number %></small></h2>
 <div class="box-body">
 
-  <strong>Intro</strong>
-  <p><%= @week.intro.html_safe %>
-</p>
+ 
+<%= @week.intro.html_safe %>
+
 
 <table class="table">
 	<% if @week.inclasses.count > 0 %>

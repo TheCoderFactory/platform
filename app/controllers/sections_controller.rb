@@ -13,6 +13,8 @@ class SectionsController < ApplicationController
     @inclass = @section.inclass
     @next_section = @inclass.sections.find_by priority: @section.priority + 1
     @previous_section = @inclass.sections.find_by priority: @section.priority - 1
+    @week = @section.inclass.week
+    
   end
 
   # GET /sections/new

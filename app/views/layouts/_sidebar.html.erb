@@ -8,7 +8,8 @@
       <li class="nav-divider"></li>
       <% if @weeks.count > 0 %>
         <% @weeks.each do |week| %>
-          <li class="<%= 'active' if current_page?(week_path(week)) %>  <%= 'finished' if week.finished? %>">
+
+          <li class="<%= 'active' if current_page?(week_path(week)) %> <%= 'finished' if week.finished? %>">
             <%= link_to week_path(week) do %>
               <% if week.current_week? %> <i class="icon-asterisk"></i> <% end %> Week <%= week.number.to_s %> 
             <% end %>
@@ -21,8 +22,8 @@
         <% end %>
       <% end %>
       <li class="nav-divider"></li>
-      <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
-      <li class="<%= 'active' if current_page?(links_path) %>"><%= link_to "Resources", links_path %></li>
+      <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "All projects", projects_path %></li>
+      <li class="<%= 'active' if current_page?(links_path) %>"><%= link_to "All resources", links_path %></li>
     </ul>
   </div>
 </div>

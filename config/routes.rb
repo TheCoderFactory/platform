@@ -1,4 +1,6 @@
 Tcfplatform::Application.routes.draw do
+  resources :chatrooms
+
   get "admin/index", :id => "admin"
   match "admin", to: "admin#index", via: :all
   resources :sections

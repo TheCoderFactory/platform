@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130905130306) do
+ActiveRecord::Schema.define(version: 20130906053113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20130905130306) do
     t.string   "link"
     t.boolean  "publish"
     t.string   "alert_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chatrooms", force: true do |t|
+    t.string   "name"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,8 +66,10 @@ ActiveRecord::Schema.define(version: 20130905130306) do
     t.text     "intro"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
+  add_index "inclasses", ["slug"], name: "index_inclasses_on_slug", unique: true, using: :btree
   add_index "inclasses", ["week_id"], name: "index_inclasses_on_week_id", using: :btree
 
   create_table "links", force: true do |t|
@@ -79,8 +88,10 @@ ActiveRecord::Schema.define(version: 20130905130306) do
     t.text     "intro"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
+  add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true, using: :btree
   add_index "projects", ["week_id"], name: "index_projects_on_week_id", using: :btree
 
   create_table "quizzes", force: true do |t|
@@ -189,6 +200,9 @@ ActiveRecord::Schema.define(version: 20130905130306) do
     t.datetime "updated_at"
     t.date     "end_date"
     t.date     "start_date"
+    t.string   "slug"
   end
+
+  add_index "weeks", ["slug"], name: "index_weeks_on_slug", unique: true, using: :btree
 
 end

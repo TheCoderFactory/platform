@@ -1,5 +1,5 @@
 <div class="panel panel-info">
-  <div class="panel-heading">Menu</div>
+  <div class="panel-heading"><i class="icon-th-list"></i> Menu</div>
   <div class="panel-body">
     <ul class="nav nav-pills nav-stacked">
       <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %><i class="icon-home"></i> Home<% end %></li>
@@ -24,6 +24,18 @@
       <li class="nav-divider"></li>
       <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "All projects", projects_path %></li>
       <li class="<%= 'active' if current_page?(links_path) %>"><%= link_to "All resources", links_path %></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="panel panel-warning">
+  <div class="panel-heading"><i class="icon-comments-alt"></i> Group chat</div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+      <% @chatrooms.each do |chatroom| %>
+        <li><%= link_to chatroom.name, chatroom.url, target: "_blank" %></li>
+      <% end %>
     </ul>
   </div>
 </div>

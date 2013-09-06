@@ -29,7 +29,9 @@
             <li><%= link_to current_user.user_profile.github do %><i class="icon-github"></i> Github<% end %></li>
           <% end %>
           <li><a href="http://heroku.com/" target="_blank"><i class="icon-cloud-upload"></i> Heroku</a></li>
-
+          <li><a href="https://news.ycombinator.com/" target="_blank"><i class="icon-book"></i> Hacker News</a></li>
+          <li class="divider"></li>
+          <li><a href="http://guides.rubyonrails.org/" target="_blank"><i class="icon-question-sign"></i> Rails Guide</a></li>
           <li class="divider"></li>
           <% @links.each do |link| %>
             <li><%= link_to link.title, link.url, target: "_blank" %></li>
@@ -43,8 +45,9 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <%= current_user.name %> <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><%= link_to "Edit account", edit_user_registration_path %></li>
-          <li><%= link_to "Edit profile", edit_user_profile_path(current_user.user_profile) %></li>
+          <li><%= link_to edit_user_registration_path do %><i class="icon-edit"></i> Edit account<% end %></li>
+          <li><%= link_to edit_user_profile_path(current_user.user_profile) do %><i class="icon-edit"></i> Edit profile<% end %></li>
+          <li><%= link_to destroy_user_session_path, :method=>'delete' do %><i class="icon-signout"></i> Sign out<% end %></li>
         </ul>
       </li>
     <% if current_user.has_role? :admin %>
@@ -52,9 +55,7 @@
       <%= link_to 'Admin', admin_path %>
       </li>
     <% end %>
-    <li>
-    <%= link_to destroy_user_session_path, :method=>'delete' do %><i class="icon-signout"></i> Sign out<% end %>
-    </li>
+    
   <% else %>
     <li>
     <%= link_to 'Login', new_user_session_path %>

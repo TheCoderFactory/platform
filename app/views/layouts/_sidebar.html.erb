@@ -7,8 +7,8 @@
       <li class="<%= 'active' if current_page?(user_profiles_path) %>"><%= link_to user_profiles_path do %><i class="icon-user"></i> Students<% end %></li>
       <li class="<%= 'active' if current_page?(calendar_path) %>"><%= link_to calendar_path do %><i class="icon-calendar"></i> Calendar<% end %></li>
       <li class="nav-divider"></li>
-      <% if @weeks.count > 0 %>
-        <% @weeks.each do |week| %>
+      <% if @active_weeks.count > 0 %>
+        <% @active_weeks.each do |week| %>
 
           <li class="<%= 'active' if current_page?(week_path(week)) %> <%= 'finished' if week.finished? %>">
             <%= link_to week_path(week) do %>
@@ -41,14 +41,5 @@
   </div>
 </div>
 
-<!-- <div class="panel panel-default">
-  <div class="panel-heading"><i class="icon-fighter-jet"></i> Quick links</div>
-  <div class="panel-body">
-    <ul class="nav nav-pills nav-stacked">
-      <% @links.each do |link| %>
-        <li><span style="font-size: 14px;"><%= link_to link.title, link.url, target: "_blank" %></span></li>
-      <% end %>
-    </ul>
-  </div>
-</div> -->
+
 <% end %>

@@ -10,9 +10,9 @@ class ApplicationController < ActionController::Base
   before_filter :menu_items
 
   def menu_items
-  		@weeks = Week.active
+  		@active_weeks = Week.active
       @chatrooms = Chatroom.all
-      @links = Link.quick
+      @qlinks = Link.quick
   end
 
 

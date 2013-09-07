@@ -27,7 +27,7 @@
 					<div class="link-body">
 						<%= link_to reading.title, reading.url, target: "_blank" %> 
 						<i class="icon-angle-right"></i> 
-						<%= reading.intro %>
+						<%= reading.intro.html_safe %>
 					</div>
 				<% end %>
 			</td>

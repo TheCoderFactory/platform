@@ -54,8 +54,6 @@
       <% if Link.tag_counts.length > 0 %>
         <% @topics.each do |topic| %>
           
-           
-          
             <%= link_to topic.name, links_path(topic_name: (topic.name)), class: 'btn btn-info btn-sm tag-button'  %>
           
         <% end %>

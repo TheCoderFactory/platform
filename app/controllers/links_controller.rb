@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @topics = Link.tag_counts_on(:topics)
+    @topics = Link.tag_counts_on(:topics).order('name ASC')
     @weeks = Week.active
 
     if params[:week].present?

@@ -22,7 +22,7 @@
         <% @links.each do |link| %>
           <tr>
             <td><%= link_to link.title, link.url %></td>
-            <td><%= link.description.html_safe %></td>
+            <td><%= link.description %></td>
             <td><%= link.topic_list %></td>
             <td><%= link.week.number %></td>
             <% if current_user.has_role? :admin %>

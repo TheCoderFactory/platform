@@ -6,12 +6,5 @@ class Link < ActiveRecord::Base
   default_scope order: 'links.created_at ASC'
   scope :quick, -> { where(quick: true) }
 
-  # def self.by_week(week)
-  #   where("week == ?", week)
-  # end
-
-  # def self.by_topic(topic)
-  # 	where("topic == ?", topic)
-  # end
 
 end

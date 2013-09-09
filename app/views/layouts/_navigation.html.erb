@@ -22,12 +22,22 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-fighter-jet"></i> Quick links <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="https://trello.com/" target="_blank"><i class="icon-trello"></i> Trello</a></li>
-          <li><a href="https://github.com/" target="_blank"><i class="icon-github"></i> Github</a></li>
-          <li><a href="http://heroku.com/" target="_blank"><i class="icon-cloud-upload"></i> Heroku</a></li>
-          <li><a href="https://news.ycombinator.com/" target="_blank"><i class="icon-book"></i> Hacker News</a></li>
-          <li class="divider"></li>
-          <li><a href="http://guides.rubyonrails.org/" target="_blank"><i class="icon-question-sign"></i> Rails Guide</a></li>
+          <% if @quicklinks.count > 0 %>
+            <% @quicklinks.each do |quicklink| %>
+              <li>
+                <%= link_to quicklink.url do %><i class="icon-<%= quicklink.icon %>"></i> <%= quicklink.name %><% end %>
+              </li>
+            <% end %>
+          <% end %>
+          <% if @important_links.count > 0 %>
+            <li class="divider"></li>
+            <% @important_links.each do |important_link| %>
+              <li>
+                <%= link_to important_link.url do %><i class="icon-<%= important_link.icon %>"></i> <%= important_link.name %><% end %>
+              </li>
+            <% end %>
+          <% end %>
+          
           <li class="divider"></li>
           <% @qlinks.each do |link| %>
             <li><%= link_to link.title, link.url, target: "_blank" %></li>

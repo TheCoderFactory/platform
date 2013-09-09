@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
   		@active_weeks = Week.active
       @chatrooms = Chatroom.all
       @qlinks = Link.quick
+      @quicklinks = Quicklink.where(important: false)
+      @important_links = Quicklink.where(important: true)
   end
 
 

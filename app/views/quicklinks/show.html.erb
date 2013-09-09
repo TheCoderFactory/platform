@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @quicklink.icon %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @quicklink.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @quicklink.url %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @quicklink.active %>
+</p>
+
+<p>
+  <strong>Important:</strong>
+  <%= @quicklink.important %>
+</p>
+
+<%= link_to 'Edit', edit_quicklink_path(@quicklink) %> |
+<%= link_to 'Back', quicklinks_path %>

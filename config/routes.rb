@@ -1,4 +1,6 @@
 Tcfplatform::Application.routes.draw do
+  resources :quicklinks
+
   resources :chatrooms
 
   get "admin/index", :id => "admin"

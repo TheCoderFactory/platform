@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  icon: MyString
+  name: MyString
+  url: MyString
+  active: false
+  important: false
+
+two:
+  icon: MyString
+  name: MyString
+  url: MyString
+  active: false
+  important: false

@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
       @important_links = Quicklink.where(important: true)
   end
 
-
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected

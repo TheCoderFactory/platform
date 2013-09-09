@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-12">
 
     <h2>Resources</h2>
     <div class="box-body">
@@ -33,31 +33,6 @@
     <br>
 <%= link_to 'New Resource', new_link_path %>
   </div>
-  <div class="col-md-3">
-    <h3>Filter by week</h3>
-      <div class="box-body">
-        <br>
-      
-        <% @weeks.each do |week| %>
-          <%= link_to "Week " + week.number.to_s, links_path(week: week), class: 'btn btn-info btn-sm'  %>
-        <% end %>
-      
-        <p></p>
-    </div>
-    <h3>Filter by topic</h3>
-      <div class="box-body">
-        <br>
-      <% if Link.tag_counts.length > 0 %>
-        <% @topics.each do |topic| %>
-          
-            <%= link_to topic.name, links_path(topic_name: (topic.name)), class: 'btn btn-info btn-sm tag-button'  %>
-          
-        <% end %>
-      <% end %>
-        <p></p>
-    </div>
-  <%= link_to "CLEAR FILTERS", links_path, class: 'btn btn-warning' %>
-  </div>
-</div>
+  
 
 

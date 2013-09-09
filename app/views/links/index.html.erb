@@ -9,8 +9,6 @@
         <tr>
           <th>Link</th>
           <th>Description</th>
-          <th>Topics</th>
-          <th>Week</th>
           <% if current_user.has_role? :admin %>
             <th></th>
             <th></th>
@@ -23,8 +21,6 @@
           <tr>
             <td><%= link_to link.title, link.url %></td>
             <td><%= link.description %></td>
-            <td><%= link.topic_list %></td>
-            <td><%= link.week.number %></td>
             <% if current_user.has_role? :admin %>
               <td><%= link_to 'Edit', edit_link_path(link) %></td>
               <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>

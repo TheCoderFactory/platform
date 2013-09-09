@@ -4,18 +4,8 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @topics = Link.tag_counts_on(:topics).order('name ASC')
-    @weeks = Week.active
-
-    if params[:week].present?
-      @week = params[:week]
-      @links = Week.where("slug = ?", @week).take.links
-    elsif params[:topic_name].present?
-      @topic_name = params[:topic_name]
-      @links = Link.tagged_with(@topic_name)
-    else
-      @links = Link.all
-    end
+    
+    @links = Link.all
   end
 
   # GET /links/1

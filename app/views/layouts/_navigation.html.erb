@@ -25,7 +25,7 @@
           <% if @quicklinks.count > 0 %>
             <% @quicklinks.each do |quicklink| %>
               <li>
-                <%= link_to quicklink.url do %><i class="icon-<%= quicklink.icon %>"></i> <%= quicklink.name %><% end %>
+                <%= link_to quicklink.url, target: '_blank' do %><i class="icon-<%= quicklink.icon %>"></i> <%= quicklink.name %><% end %>
               </li>
             <% end %>
           <% end %>
@@ -33,7 +33,7 @@
             <li class="divider"></li>
             <% @important_links.each do |important_link| %>
               <li>
-                <%= link_to important_link.url do %><i class="icon-<%= important_link.icon %>"></i> <%= important_link.name %><% end %>
+                <%= link_to important_link.url, target: '_blank' do %><i class="icon-<%= important_link.icon %>"></i> <%= important_link.name %><% end %>
               </li>
             <% end %>
           <% end %>

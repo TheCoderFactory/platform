@@ -25,10 +25,12 @@
 			<td>
 				<% @week.readings.each do |reading| %>
 					<div class="link-body">
-						<%= link_to reading.title, reading.url, target: "_blank" %> 
-						<i class="icon-angle-right"></i> 
 						<%= reading.intro.html_safe %>
+						<br>
+						<i class="icon-angle-right"></i> 
+						<%= link_to reading.title, reading.url, target: "_blank" %> 
 					</div>
+					<hr>
 				<% end %>
 			</td>
 		</tr>

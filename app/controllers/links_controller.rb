@@ -4,7 +4,18 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    @topics = Link.tag_counts_on(:topics).order('name ASC')
+    @weeks = Week.active
+
+    if params[:week].present?
+      @week = params[:week]
+      @links = Week.where("slug = ?", @week).take.links
+    elsif params[:topic_name].present?
+      @topic_name = params[:topic_name]
+      @links = Link.tagged_with(@topic_name)
+    else
+      @links = Link.all
+    end
   end
 
   # GET /links/1
@@ -69,6 +80,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:week_id, :title, :url, :quick)
+      params.require(:link).permit(:week_id, :title, :url, :quick, :description, :topic_list)
     end
 end

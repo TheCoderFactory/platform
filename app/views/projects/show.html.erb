@@ -1,10 +1,11 @@
 <ol class="breadcrumb">
+	<li><%= link_to root_path do %><i class="icon-home"></i><% end %></li>
   <li><%= link_to week_path(@project.week) do %>Week <%= @project.week.number %>: <%= @project.week.title %><% end %></li>
   
-  <li class="active">Project: <%= @project.title %></li>
+  <li class="active"><i class="icon-github"></i> Project: <%= @project.title %></li>
 </ol>
 <div class="page-title">
-<h2>Week 
+<h2><i class="icon-github"></i> Week 
   <%= @project.week.number %> Project
 </h2>
 </div>

@@ -41,7 +41,7 @@
 			<th><i class="icon-link"></i> Resources</th>
 			<td>
 				<% @week.links.each do |link| %>
-					<p><%= link_to link.title, link.url, target: "_blank" %></p>
+					<p><i class="icon-globe"></i> <%= link_to link.title, link.url, target: "_blank" %></p>
 				<% end %>
 			</td>
 		</tr>

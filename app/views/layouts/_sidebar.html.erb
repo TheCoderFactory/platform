@@ -4,7 +4,7 @@
   <div class="panel-body">
     <ul class="nav nav-pills nav-stacked">
       <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %><i class="icon-home"></i> Home<% end %></li>
-      <li class="<%= 'active' if current_page?(user_profiles_path) %>"><%= link_to user_profiles_path do %><i class="icon-user"></i> Students<% end %></li>
+      <li class="<%= 'active' if current_page?(user_profiles_path) %>"><%= link_to user_profiles_path do %><i class="icon-group"></i> Students<% end %></li>
       <li class="<%= 'active' if current_page?(calendar_path) %>"><%= link_to calendar_path do %><i class="icon-calendar"></i> Calendar<% end %></li>
       <li class="nav-divider"></li>
       <% if @active_weeks.count > 0 %>
@@ -12,7 +12,9 @@
 
           <li class="<%= 'active' if current_page?(week_path(week)) %> <%= 'finished' if week.finished? %>">
             <%= link_to week_path(week) do %>
-              <% if week.current_week? %> <i class="icon-asterisk"></i> <% end %> Week <%= week.number.to_s %> 
+              <% if week.current_week? %> <i class="icon-asterisk"></i> <% end %> 
+              <% if week.finished? %> <i class="icon-check-sign"></i> <% end %> 
+              Week <%= week.number.to_s %> 
             <% end %>
               <!-- <ul class="nav sub-nav">
                 <li><%= link_to "Class", inclass_path(week.inclasses.first) %></li>
@@ -23,8 +25,8 @@
         <% end %>
       <% end %>
       <li class="nav-divider"></li>
-      <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "All projects", projects_path %></li>
-      <li class="<%= 'active' if current_page?(links_path) %>"><%= link_to "All resources", links_path %></li>
+      <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to projects_path do %><i class="icon-list-alt"></i> Projects<% end %></li>
+      <li class="<%= 'active' if current_page?(links_path) %>"><%= link_to links_path do %><i class="icon-link"></i> Resources<% end %></li></li>
     </ul>
   </div>
 </div>

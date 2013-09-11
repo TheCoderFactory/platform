@@ -13,6 +13,10 @@ class Week < ActiveRecord::Base
 		self.start_date <= Date.today && self.end_date > Date.today
 	end
 
+	def future_week?
+		self.start_date > Date.today
+	end
+
 	def finished?
 		self.end_date < Date.today
 	end

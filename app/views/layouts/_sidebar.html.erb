@@ -13,7 +13,8 @@
           <li class="<%= 'active' if current_page?(week_path(week)) %> <%= 'finished' if week.finished? %>">
             <%= link_to week_path(week) do %>
               <% if week.current_week? %> <i class="icon-asterisk"></i> <% end %> 
-              <% if week.finished? %> <i class="icon-check-sign"></i> <% end %> 
+              <% if week.finished? %> <i class="icon-check-sign"></i> <% end %>
+              <% if week.future_week? %> <i class="icon-check-empty"></i> <% end %> 
               Week <%= week.number.to_s %> 
             <% end %>
               <!-- <ul class="nav sub-nav">

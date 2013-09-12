@@ -466,3 +466,8 @@ label {
 .tag-button {
   margin-bottom: 5px;
 }
+@font-face {
+  font-family: 'fontawesomeregular';
+  src: url('fontawesome-webfont.eot');
+  src: url('fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('fontawesome-webfont.woff') format('woff'), url('fontawesome-webfont.ttf') format('truetype'), url('fontawesome-webfont.svg#glyphicons-halflingsregular') format('svg');
+}

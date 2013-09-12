@@ -21,6 +21,9 @@ gem 'carrierwave'
 gem "fog"
 gem "font-awesome-rails"
 gem 'newrelic_rpm'
+gem 'codemirror-rails'
+gem 'redactor-rails'
+gem "mini_magick"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

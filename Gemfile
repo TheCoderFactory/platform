@@ -24,6 +24,7 @@ gem 'newrelic_rpm'
 gem 'codemirror-rails'
 gem 'redactor-rails'
 gem "mini_magick"
+gem "font-awesome-rails"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

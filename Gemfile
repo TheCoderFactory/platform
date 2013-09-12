@@ -22,7 +22,7 @@ gem "fog"
 gem "font-awesome-rails"
 gem 'newrelic_rpm'
 gem 'codemirror-rails'
-gem 'redactor-rails'
+# gem 'redactor-rails'
 gem "mini_magick"
 group :development do
   gem 'better_errors'

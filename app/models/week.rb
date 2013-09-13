@@ -10,7 +10,7 @@ class Week < ActiveRecord::Base
   	friendly_id :title, use: :slugged
 
 	def current_week?
-		self.start_date <= Date.today && self.end_date > Date.today
+		self.start_date <= Date.today && self.end_date >= Date.today
 	end
 
 	def future_week?

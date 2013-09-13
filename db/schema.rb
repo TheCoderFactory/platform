@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912163134) do
+ActiveRecord::Schema.define(version: 20130913011050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 20130912163134) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "gist"
   end
 
   add_index "sections", ["inclass_id"], name: "index_sections_on_inclass_id", using: :btree

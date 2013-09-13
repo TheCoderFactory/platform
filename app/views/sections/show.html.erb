@@ -10,7 +10,7 @@
 		
 		<%= @section.content.html_safe %>
 		<% if @section.gist %>
-			<%= @section.gist.html_safe %>
+			<script src="https://gist.github.com/pedrogrande/<%= @section.gist %>.js"></script>
 		<% end %>
 		<br>
 		<div class="direction-buttons">

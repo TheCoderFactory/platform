@@ -19,7 +19,7 @@
         <td><%= section.priority %></td>
         <td><%= section.title %></td>
         <td><%= link_to 'Show', section %></td>
-        <td><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td><div data-no-turbolink><%= link_to 'Edit', edit_section_path(section) %></div></td>
         <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,5 +27,6 @@
 </table>
 
 <br>
-
+<div data-no-turbolink>
 <%= link_to 'New Section', new_section_path %>
+</div>

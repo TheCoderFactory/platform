@@ -1,0 +1,31 @@
+<h1>Listing cheat_sheets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Icon</th>
+      <th>Gist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cheat_sheets.each do |cheat_sheet| %>
+      <tr>
+        <td><%= cheat_sheet.name %></td>
+        <td><%= cheat_sheet.icon %></td>
+        <td><%= cheat_sheet.gist %></td>
+        <td><%= link_to 'Show', cheat_sheet %></td>
+        <td><%= link_to 'Edit', edit_cheat_sheet_path(cheat_sheet) %></td>
+        <td><%= link_to 'Destroy', cheat_sheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cheat sheet', new_cheat_sheet_path %>

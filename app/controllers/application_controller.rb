@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
       @qlinks = Link.quick
       @quicklinks = Quicklink.where(important: false)
       @important_links = Quicklink.where(important: true)
+      @cheat_sheets = CheatSheet.all
   end
 
   before_filter :configure_permitted_parameters, if: :devise_controller?

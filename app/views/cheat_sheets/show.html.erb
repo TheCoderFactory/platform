@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cheat_sheet.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @cheat_sheet.icon %>
+</p>
+
+<p>
+  <strong>Gist:</strong>
+  <%= @cheat_sheet.gist %>
+</p>
+
+<%= link_to 'Edit', edit_cheat_sheet_path(@cheat_sheet) %> |
+<%= link_to 'Back', cheat_sheets_path %>

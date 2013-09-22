@@ -1,4 +1,6 @@
 Tcfplatform::Application.routes.draw do
+  resources :cheat_sheets
+
   mount RedactorRails::Engine => '/redactor_rails'
   resources :quicklinks
 

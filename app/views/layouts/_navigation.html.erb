@@ -31,6 +31,7 @@
           <% end %>
           <% if @important_links.count > 0 %>
             <li class="divider"></li>
+            
             <% @important_links.each do |important_link| %>
               <li>
                 <%= link_to important_link.url, target: '_blank' do %><i class="icon-<%= important_link.icon %>"></i> <%= important_link.name %><% end %>
@@ -39,6 +40,14 @@
           <% end %>
           
           <li class="divider"></li>
+          <% @cheat_sheets.each do |cheat_sheet| %>
+                <li>
+                  <%= link_to cheat_sheet.gist, target: '_blank' do %>
+                    <i class="icon-<%= cheat_sheet.icon %>"></i> 
+                    <%= cheat_sheet.name %>
+                  <% end %>
+                </li>
+            <% end %>
           <% @qlinks.each do |link| %>
             <li><%= link_to link.title, link.url, target: "_blank" %></li>
           <% end %>
